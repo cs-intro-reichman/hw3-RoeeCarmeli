@@ -58,9 +58,25 @@ public class Algebra {
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int multi = x1;
-		for (int i = 1; i < x2; i++){
-			multi = plus(multi, x1);
+		if ((x1 < 0 && x2 > 0) || (x1 > 0 && x2 < 0)) { // checks if resault should be negative
+			if (x1 < 0) {
+				for (int i = 1; i < x2; i++){ // checks if x1 is negative or positive
+					multi = minus(multi, x1);
+				}
+			}
+			else{
+				for (int i = 0; i < x2; i++){
+					multi = minus(multi, x1);
+				}
+			}
 		}
+		else{ // does the work if the resault should be positive
+			for (int i = 1; i < x2; i++){
+				multi = plus(multi, x1);
+			}
+		}
+		
+		if (x1 == 0 || x2 == 0) multi = 0;
 		return multi;
 	}
 
