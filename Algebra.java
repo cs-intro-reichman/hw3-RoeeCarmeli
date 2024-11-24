@@ -129,7 +129,7 @@ public class Algebra {
 		return rest;
 	}	
 
-	// Returns the integer part of sqrt(x) 
+	// Returns the integer part of sqrt(x).
 	public static int sqrt(int x) {
 		int i = 0;
 		int newNum = 0;
