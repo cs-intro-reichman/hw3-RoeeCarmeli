@@ -26,17 +26,31 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 			int sum = x1;
-			for (int i = 0; i < x2; i++) {
+			if (x2 < 0) {
+				for (int i = 0; i > x2; i--) {
+					sum--;
+				}
+			}
+			else{
+				for (int i = 0; i < x2; i++) {
 				sum++;
 			}
+		}
 		return sum;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		int difference = x1;
-		for (int i = 0; i < x2; i++){
+		if (x2 < 0){
+			for (int i = 0; i > x2; i--){
+				difference++;
+			}
+		}
+		else {
+			for (int i = 0; i < x2; i++){
 			difference--;
+			}
 		}
 		return difference;
 	}
