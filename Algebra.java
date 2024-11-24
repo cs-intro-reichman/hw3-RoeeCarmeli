@@ -87,10 +87,35 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		int part = x1;
 		int count = 0;
-		while (part > 0) {
-			part = minus(part, x2);
-			count++;
+		
+		if (part < 0 && x2 > 0) {
+			while (part < 0) {
+				part = plus(part, x2);
+				count--;
+			}
+			part = x1;
 		}
+		if (part < 0 && x2 < 0) {
+			while (part < 0) {
+				part = minus(part, x2);
+				count++;
+			}
+			part = x1;
+		}
+		if (part > 0 && x2 > 0) {
+			while (part > 0) {
+				part = minus(part, x2);
+				count++;
+			}
+		part = x1;
+		}
+		if (part > 0 && x2 < 0) {
+			while (part > 0) {
+				part = plus(part, x2);
+				count--;
+			}
+		}
+		if (part == 0) count = 0;
 		return count;
 	}
 
