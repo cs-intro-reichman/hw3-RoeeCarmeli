@@ -107,13 +107,14 @@ public class Algebra {
 				part = minus(part, x2);
 				count++;
 			}
-		part = x1;
+			part = x1;
 		}
 		if (part > 0 && x2 < 0) {
 			while (part > 0) {
 				part = plus(part, x2);
 				count--;
 			}
+			part = x1;
 		}
 		if (part == 0) count = 0;
 		return count;
